@@ -9,7 +9,7 @@ assignees: ''
 
 EPIC: <epic>
 
-As a **role** I want **capability** so that **received benefit**
+As a **role** I want to **capability** so that **received benefit**
 
 **Acceptance Criteria**
 
