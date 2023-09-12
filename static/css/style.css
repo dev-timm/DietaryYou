@@ -47,3 +47,29 @@ body {
 }
 
 /* NAV */
+
+/* FOOTER */
+
+.footer {
+    margin-top: 200px;
+}
+
+.icon-facebook {
+    height: 28px;
+    width: 28px;
+    background: url('../images/icons/social-facebook.svg') no-repeat center center;
+}
+
+.icon-instagram {
+    height: 28px;
+    width: 28px;
+    background: url('../images/icons/social-instagram.svg') no-repeat center center;
+}
+
+.icon-twitter {
+    height: 28px;
+    width: 28px;
+    background: url('../images/icons/social-twitter.svg') no-repeat center center;
+}
+
+/* FOOTER */
