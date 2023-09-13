@@ -73,3 +73,26 @@ body {
 }
 
 /* FOOTER */
+
+/* POST LIST */
+
+.article-list {
+    margin: 100px 0 ;
+}
+
+.row .card {
+    padding: 0;
+}
+
+.card-title {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.author {
+    font-weight: 600;
+}
+
+/* POST LIST */
+

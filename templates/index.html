@@ -2,4 +2,26 @@
 
 {% block content %}
 
+<h3>Most Recent Articles</h3>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+    {% for post in post_list %}
+    <div class="col">
+        <div class="card border-0">
+            {% if "placeholder" in post.featured_image.url %}
+            <img src="../static/images/placeholder-image.jpg" class="card-img-top">
+            {% else %}
+            <img src="{{ post.featured_image.url }}" class="card-img-top" alt="...">
+            {% endif %}
+            <div class="card-body  px-0">
+                <p class="author">{{ post.author }} <span class="float-end">{{ post.created_on}}</span></p>
+                <a class="card-title">{{ post.title }}</a>
+                <p class="card-text">{{ post.excerpt }}</p>
+                <hr>
+                <p class="card-text text-muted"><img src="../static/images/icons/icon-like.svg" alt=""> {{ post.number_of_likes }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}   
+</div>
 {%endblock%}
