@@ -9,6 +9,15 @@ body {
 
 /* GENERAL */
 
+/* STYLES */
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* STYLES */
+
 /* COMPONENTS */
 
 .btn-outline-primary {
@@ -96,3 +105,14 @@ body {
 
 /* POST LIST */
 
+/* POST DETAIL */
+
+.post-content {
+    margin-top: 3.5rem;
+}
+
+.author span {
+    font-weight: 400;
+}
+
+/* POST DETAIL */
