@@ -15,7 +15,7 @@
             {% endif %}
             <div class="card-body  px-0">
                 <p class="author">{{ post.author }} <span class="float-end">{{ post.created_on}}</span></p>
-                <a class="card-title">{{ post.title }}</a>
+                <a href="{% url 'post_detail' post.slug %}" class="card-title">{{ post.title }}</a>
                 <p class="card-text">{{ post.excerpt }}</p>
                 <hr>
                 <p class="card-text text-muted"><img src="../static/images/icons/icon-like.svg" alt=""> {{ post.number_of_likes }}</p>
