@@ -16,6 +16,12 @@ h2 {
     font-weight: 600;
 }
 
+h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 48px;
+}
+
 /* STYLES */
 
 /* COMPONENTS */
@@ -85,7 +91,7 @@ h2 {
 
 /* POST LIST */
 
-.article-list {
+.site-content {
     margin: 100px 0 ;
 }
 
@@ -106,6 +112,10 @@ h2 {
 /* POST LIST */
 
 /* POST DETAIL */
+
+.max-article-width {
+    max-width: 700px;
+}
 
 .post-content {
     margin-top: 3.5rem;
