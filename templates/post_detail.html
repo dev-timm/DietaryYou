@@ -7,8 +7,26 @@
         <h2>{{ post.title }}</h2>
         <p class="author">{{ post.author }}<span> | {{ post.created_on}}</span></p>
         <hr>
-        <p class="card-text post-body"><img src="../static/images/icons/icon-like.svg" alt="">
-            {{ post.number_of_likes }}</p>
+        <div>
+            {% if user.is_authenticated %}
+            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                {% csrf_token %}
+                {% if liked %}
+                <button type="submit" class="button-liked" name="blogpost_id" value="{{post.slug}}"><img
+                        src="../static/images/icons/icon-liked.svg" alt=""> {{ post.number_of_likes }}</button>
+
+                {% else %}
+                <button type="submit" class="button-like" name="blogpost_id" value="{{post.slug}}"><img
+                        src="../static/images/icons/icon-like.svg" alt=""> {{ post.number_of_likes }}</button>
+
+                {% endif %}
+            </form>
+            {% else %}
+
+            <p class="card-text post-body"><img src="../static/images/icons/icon-like.svg" alt="">
+                {{ post.number_of_likes }}</p>
+            {% endif %}
+            </div>
     </div>
     <div class="post-content">
         {{ post.content | safe }}

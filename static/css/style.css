@@ -188,6 +188,16 @@ input[type="email"]:focus,
     margin-bottom: 8px;
 }
 
+.button-like {
+    background: url('../images/icons/like.svg') no-repeat center center;
+    border: none;
+}
+
+.button-liked {
+    background: url('../images/icons/like.svg') no-repeat center center;
+    border: none;
+}
+
 /* POST DETAIL */
 
 /* LOGIN, SIGNUP AND LOGOUT */
