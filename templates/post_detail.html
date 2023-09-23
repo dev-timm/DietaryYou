@@ -23,9 +23,14 @@
             </form>
             {% else %}
 
-            <p class="card-text post-body"><img src="../static/images/icons/icon-like.svg" alt="">
-                {{ post.number_of_likes }}</p>
+            <span class="like-display"><img src="../static/images/icons/icon-like.svg" alt="">
+                {{ post.number_of_likes }}</span>
             {% endif %}
+            
+            {% with comments.count as total_comments %}
+            <a href="#comment-section-link" class="card-text post-body comment-link"><img src="../static/images/icons/icon-comment.svg" alt="">
+                {{ total_comments }}</a>
+            {% endwith %}
             </div>
     </div>
     <div class="post-content">
@@ -33,7 +38,7 @@
         <hr>
     </div>
 
-    <div class="post-comments">
+    <div class="post-comments" id="comment-section-link">
         <h3>Comments</h3>
         <div class="row">
             {% for comment in comments %}

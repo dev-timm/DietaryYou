@@ -198,6 +198,20 @@ input[type="email"]:focus,
     border: none;
 }
 
+.comment-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.comment-link:hover {
+    color: #676767;
+    text-decoration: none;
+}
+
+.like-display {
+    padding: 1px 6px;
+}
+
 /* POST DETAIL */
 
 /* LOGIN, SIGNUP AND LOGOUT */
