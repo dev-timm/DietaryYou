@@ -8,8 +8,14 @@ from .forms import CommentForm
 class PostList(generic.ListView):
 
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
+
+
+class AddPost(generic.CreateView):
+
+    model = Post
+    template_name = 'add_post.html'
+    fields = ('title', 'slug', 'author', 'content', 'status')
 
 
 class PostDetail(View):

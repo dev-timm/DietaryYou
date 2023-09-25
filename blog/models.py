@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary. models import CloudinaryField
+from django.urls import reverse
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -22,7 +23,10 @@ class Post(models.Model):
         ordering = ['-created_on']
 
     def __str__(self):
-        return self.title
+        return self.title + ' | ' + str(self.author)
+
+    def get_absolute_url(self):
+        return reverse('home')
 
     def number_of_likes(self):
         return self.likes.count()
