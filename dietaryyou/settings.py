@@ -61,6 +61,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+ACCOUNT_FORMS = {'login': 'blog.forms.SigninForm', 'signup': 'blog.forms.RegisterForm'}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
