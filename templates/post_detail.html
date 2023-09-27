@@ -4,7 +4,16 @@
 
 <div class="container max-article-width">
     <div class="post-head">
-        <h2>{{ post.title }}</h2>
+        <div class="row">
+            <div class="col-10">
+                <h2 class="d-inline">{{ post.title }}</h2>
+            </div>
+            <div class="col-2">
+                <a href="{% url 'edit_post' post.slug %}" class="float-end btn edit-link">
+                    <img src="../static/images/icons/icon-edit.svg" alt="Edit">
+                </a>
+            </div>
+        </div>
         <p class="author">{{ post.author }}<span> | {{ post.created_on}}</span></p>
         <hr>
         <div>
@@ -26,12 +35,13 @@
             <span class="like-display"><img src="../static/images/icons/icon-like.svg" alt="">
                 {{ post.number_of_likes }}</span>
             {% endif %}
-            
+
             {% with comments.count as total_comments %}
-            <a href="#comment-section-link" class="card-text post-body comment-link"><img src="../static/images/icons/icon-comment.svg" alt="">
+            <a href="#comment-section-link" class="card-text post-body comment-link"><img
+                    src="../static/images/icons/icon-comment.svg" alt="">
                 {{ total_comments }}</a>
             {% endwith %}
-            </div>
+        </div>
     </div>
     <div class="post-content">
         {{ post.content | safe }}
@@ -70,4 +80,4 @@
     </div>
 </div>
 
-    {% endblock content %}
+{% endblock content %}
