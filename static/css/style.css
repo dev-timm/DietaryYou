@@ -15,6 +15,10 @@ body {
     color: #333;
 }
 
+.form-bottom-margin {
+    margin-bottom: 100px;
+}
+
 /* GENERAL */
 
 /* STYLES */
@@ -270,23 +274,3 @@ input[type="email"]:focus,
 .max-login-width {
     max-width: 500px;
 }
-
-/* .logout input {
-    width: 100%;
-    height: 48px;
-    padding: 16px 8px;
-    border: 1px solid #C0C0C0;
-    border-radius: 8px;
-}
-
-.logout input:hover {
-    border-color: #37B571;
-}
-
-.logout input[type='checkbox'] {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-} */
-
-/* LOGIN, SIGNUP AND LOGOUT */
