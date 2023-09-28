@@ -19,6 +19,10 @@ body {
     margin-bottom: 100px;
 }
 
+.max-window-width {
+    max-width: 500px;
+}
+
 /* GENERAL */
 
 /* STYLES */
@@ -36,6 +40,10 @@ h3 {
 
 .link {
     color: #37B571;
+}
+
+.icon-hover:hover {
+    background-color: #F6F6F6;
 }
 
 /* STYLES */
@@ -102,6 +110,11 @@ h3 {
     border-color: #37B571;
     font-weight: 600;
     color: #fff;
+}
+
+.btn-danger {
+    height: 48px;
+    font-weight: 600;
 }
 
 .btn-primary:hover {

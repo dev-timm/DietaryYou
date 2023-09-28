@@ -8,9 +8,12 @@
             <div class="col-10">
                 <h2 class="d-inline">{{ post.title }}</h2>
             </div>
-            <div class="col-2">
-                <a href="{% url 'edit_post' post.slug %}" class="float-end btn edit-link">
-                    <img src="../static/images/icons/icon-edit.svg" alt="Edit">
+            <div class="col-2 pt-2">
+                <a href="{% url 'edit_post' post.slug %}" class="float-end btn btn-sm icon-hover">
+                    <img src="../static/images/icons/icon-edit.svg" alt="Edit Post">
+                </a>
+                <a href="{% url 'delete_post' post.slug %}" class="float-end btn btn-sm icon-hover">
+                    <img src="../static/images/icons/icon-delete.svg" alt="Delete Post">
                 </a>
             </div>
         </div>
