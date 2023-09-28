@@ -8,6 +8,7 @@
             <div class="col-10">
                 <h2 class="d-inline">{{ post.title }}</h2>
             </div>
+            {% if user.is_authenticated and post.author.id == user.id %}
             <div class="col-2 pt-2">
                 <a href="{% url 'edit_post' post.slug %}" class="float-end btn btn-sm icon-hover">
                     <img src="../static/images/icons/icon-edit.svg" alt="Edit Post">
@@ -16,6 +17,7 @@
                     <img src="../static/images/icons/icon-delete.svg" alt="Delete Post">
                 </a>
             </div>
+            {% endif %}
         </div>
         <p class="author">{{ post.author }}<span> | {{ post.created_on}}</span></p>
         <hr>
