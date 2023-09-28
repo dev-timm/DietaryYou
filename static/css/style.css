@@ -225,6 +225,11 @@ input[type="email"]:focus,
     color: #707070;
 }
 
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
 /* POST LIST */
 
 /* POST DETAIL */
