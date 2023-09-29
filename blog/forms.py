@@ -6,13 +6,14 @@ from allauth.account.forms import SignupForm, LoginForm
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'featured_image', 'slug', 'author', 'content', 'status')
+        fields = ('title', 'featured_image', 'slug', 'author', 'content', 'excerpt', 'status')
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control form-control-lg'}),
             'slug': forms.TextInput(attrs={'class': 'form-control form-control-lg'}),
             'featured_image': forms.FileInput(attrs={'class': 'form-control form-control-lg'}),
             'author': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),
             'content': forms.Textarea(attrs={'class': 'form-control form-control-lg'}),
+            'excerpt': forms.Textarea(attrs={'class': 'form-control form-control-lg excerpt-height'}),
             'status': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),            
         }
 
@@ -20,12 +21,13 @@ class PostForm(forms.ModelForm):
 class EditForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'featured_image', 'slug', 'content', 'status')
+        fields = ('title', 'featured_image', 'slug', 'content', 'excerpt', 'status')
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control form-control-lg'}),
             'slug': forms.TextInput(attrs={'class': 'form-control form-control-lg'}),
             'featured_image': forms.FileInput(attrs={'class': 'form-control form-control-lg'}),
             'content': forms.Textarea(attrs={'class': 'form-control form-control-lg'}),
+            'excerpt': forms.Textarea(attrs={'class': 'form-control form-control-lg excerpt-height'}),
             'status': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),            
         }
 

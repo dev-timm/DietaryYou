@@ -138,6 +138,10 @@ input[type="email"]:focus,
     outline: 0 none;
 }
 
+.excerpt-height {
+    height: 122px;
+}
+
 /* COMPONENTS */
 
 /* NAV */
