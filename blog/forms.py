@@ -8,12 +8,12 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'featured_image', 'slug', 'author', 'content', 'excerpt', 'status')
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control form-control-lg'}),
-            'slug': forms.TextInput(attrs={'class': 'form-control form-control-lg'}),
+            'title': forms.TextInput(attrs={'class': 'form-control form-control-lg', 'placeholder': 'Enter a post title'}),
+            'slug': forms.TextInput(attrs={'class': 'form-control form-control-lg',  'placeholder': 'Enter a post slug'}),
             'featured_image': forms.FileInput(attrs={'class': 'form-control form-control-lg'}),
-            'author': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),
-            'content': forms.Textarea(attrs={'class': 'form-control form-control-lg'}),
-            'excerpt': forms.Textarea(attrs={'class': 'form-control form-control-lg excerpt-height'}),
+            'author': forms.Select(attrs={'class': 'form-control form-control-lg form-select', 'placeholder': 'Select an author'}),
+            'content': forms.Textarea(attrs={'class': 'form-control form-control-lg', 'placeholder': 'Enter the content of the post'}),
+            'excerpt': forms.Textarea(attrs={'class': 'form-control form-control-lg excerpt-height',  'placeholder': 'Enter a short summary of the post'}),
             'status': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),            
         }
 
@@ -23,11 +23,11 @@ class EditForm(forms.ModelForm):
         model = Post
         fields = ('title', 'featured_image', 'slug', 'content', 'excerpt', 'status')
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control form-control-lg'}),
-            'slug': forms.TextInput(attrs={'class': 'form-control form-control-lg'}),
+            'title': forms.TextInput(attrs={'class': 'form-control form-control-lg', 'placeholder': 'Enter a post title'}),
+            'slug': forms.TextInput(attrs={'class': 'form-control form-control-lg',  'placeholder': 'Enter a post slug'}),
             'featured_image': forms.FileInput(attrs={'class': 'form-control form-control-lg'}),
-            'content': forms.Textarea(attrs={'class': 'form-control form-control-lg'}),
-            'excerpt': forms.Textarea(attrs={'class': 'form-control form-control-lg excerpt-height'}),
+            'content': forms.Textarea(attrs={'class': 'form-control form-control-lg', 'placeholder': 'Enter the content of the post'}),
+            'excerpt': forms.Textarea(attrs={'class': 'form-control form-control-lg excerpt-height', 'placeholder': 'Enter a short summary of the post'}),
             'status': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),            
         }
 
