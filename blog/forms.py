@@ -1,6 +1,7 @@
 from .models import Post, Comment
 from django import forms
 from allauth.account.forms import SignupForm, LoginForm
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
 class PostForm(forms.ModelForm):
@@ -12,7 +13,7 @@ class PostForm(forms.ModelForm):
             'slug': forms.TextInput(attrs={'class': 'form-control form-control-lg',  'placeholder': 'Enter a post slug'}),
             'featured_image': forms.FileInput(attrs={'class': 'form-control form-control-lg'}),
             'author': forms.Select(attrs={'class': 'form-control form-control-lg form-select', 'placeholder': 'Select an author'}),
-            'content': forms.Textarea(attrs={'class': 'form-control form-control-lg', 'placeholder': 'Enter the content of the post'}),
+            'content': SummernoteWidget(),
             'excerpt': forms.Textarea(attrs={'class': 'form-control form-control-lg excerpt-height',  'placeholder': 'Enter a short summary of the post'}),
             'status': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),            
         }
@@ -26,7 +27,7 @@ class EditForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control form-control-lg', 'placeholder': 'Enter a post title'}),
             'slug': forms.TextInput(attrs={'class': 'form-control form-control-lg',  'placeholder': 'Enter a post slug'}),
             'featured_image': forms.FileInput(attrs={'class': 'form-control form-control-lg'}),
-            'content': forms.Textarea(attrs={'class': 'form-control form-control-lg', 'placeholder': 'Enter the content of the post'}),
+            'content': SummernoteWidget(),
             'excerpt': forms.Textarea(attrs={'class': 'form-control form-control-lg excerpt-height', 'placeholder': 'Enter a short summary of the post'}),
             'status': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),            
         }

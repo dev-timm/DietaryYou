@@ -59,6 +59,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+SUMMERNOTE_THEME = 'bs5'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ACCOUNT_FORMS = {'login': 'blog.forms.SigninForm', 'signup': 'blog.forms.RegisterForm'}
@@ -126,6 +127,29 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+SUMMERNOTE_CONFIG = {
+    # You can put custom Summernote settings
+    'summernote': {
+        # As an example, using Summernote Air-mode
+        'airMode': False,
+
+        # Change editor size
+        'width': '100%',
+        'height': '480',
+
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['para', ['ul', 'ol']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+        ],
+    }
+}
 
 
 # Internationalization
