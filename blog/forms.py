@@ -7,12 +7,11 @@ from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'featured_image', 'slug', 'author', 'content', 'excerpt', 'status')
+        fields = ('title', 'featured_image', 'slug', 'content', 'excerpt', 'status')
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control form-control-lg', 'placeholder': 'Enter a post title'}),
             'slug': forms.TextInput(attrs={'class': 'form-control form-control-lg',  'placeholder': 'Enter a post slug'}),
             'featured_image': forms.FileInput(attrs={'class': 'form-control form-control-lg'}),
-            'author': forms.Select(attrs={'class': 'form-control form-control-lg form-select', 'placeholder': 'Select an author'}),
             'content': SummernoteWidget(),
             'excerpt': forms.Textarea(attrs={'class': 'form-control form-control-lg excerpt-height',  'placeholder': 'Enter a short summary of the post'}),
             'status': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),            
