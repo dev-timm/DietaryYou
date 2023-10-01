@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container max-window-width">
+    <h3 class="text-center">User Account</h3>
+    <p class="user-details-label">Username</p>
+    <p class="user-details">{{ user.username }}</p>
+    
+    <p class="user-details-label">Email</p>
+    {% if current_emailaddress %}
+    <p class="user-details">{{ user.emailaddress }}</p>
+    {% else %}
+    <p>There is currently no email address</p>
+    {% endif %}
+    <div class="mt-5">
+        <a class="logout-link" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+    </div>
+    <div class="mt-4">
+        <a class="link-danger" aria-current="page" href="{% url 'account_logout' %}">Delete Account</a>
+        <p>Deleting your account can not be undone.</p>
+    </div>
+    
+    
+</div>
+{%endblock%}
