@@ -170,6 +170,10 @@ input[type="email"]:focus,
     font-weight: 400;
 }
 
+.account-link {
+    margin-left: 16px;
+}
+
 /* NAV */
 
 /* FOOTER */
@@ -295,4 +299,18 @@ input[type="email"]:focus,
 
 .max-login-width {
     max-width: 500px;
+}
+
+/* ACCOUNT */
+
+.user-details {
+    font-weight: 700;
+}
+
+.user-details-label {
+    margin-bottom: 0px ;
+}
+
+.logout-link {
+    color: #37B571;
 }

@@ -29,11 +29,8 @@
                     <li>
                         <a class="btn btn-outline-primary" aria-current="page" href="{% url 'add_post' %}">New Post</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'user_account' %}">Account</a>
+                    <li class="nav-item account-link">
+                        <a class="nav-link active" aria-current="page" href="{% url 'user_account' %}">My Account</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
