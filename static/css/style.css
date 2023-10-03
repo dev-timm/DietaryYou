@@ -45,7 +45,7 @@ h4 {
 }
 
 .link {
-    color: #37B571;
+    color: #078758;
 }
 
 .icon-hover:hover {
@@ -63,7 +63,7 @@ h4 {
 }
 
 .form-control:hover {
-    border-color: #37B571;
+    border-color: #078758;
 }
 
 .form-control:focus {
@@ -77,7 +77,7 @@ h4 {
 }
 
 .form-check-input:hover {
-    border-color: #37B571;
+    border-color: #078758;
 }
 
 
@@ -86,20 +86,20 @@ h4 {
 }
 
 .form-check-input:checked {
-    background-color: #37B571;
-    border-color: #37B571;
+    background-color: #078758;
+    border-color: #078758;
   }
 
 .btn-outline-primary {
     background-color: #F9FFFC;
-    border-color: #37B571;
+    border-color: #078758;
     font-weight: 600;
-    color: #37B571;
+    color: #078758;
 }
 
 .btn-outline-primary:hover {
-    background-color: #37B571;
-    border-color: #37B571;
+    background-color: #078758;
+    border-color: #078758;
     color: #fff;
 }
 
@@ -111,9 +111,9 @@ h4 {
 
 
 .btn-primary {
-    background-color: #37B571;
+    background-color: #078758;
     height: 48px;
-    border-color: #37B571;
+    border-color: #078758;
     font-weight: 600;
     color: #fff;
 }
@@ -128,15 +128,15 @@ h4 {
 }
 
 .btn-primary:hover {
-    background-color: #1b894f;
-    border-color: #1b894f;
+    background-color: #046d47;
+    border-color: #046d47;
     color: #fff;
 }
 
 .btn-primary:active:focus {
     color: #fff; 
-    background-color: #1b894f; 
-    border-color: #1b894f;
+    background-color: #046d47; 
+    border-color: #046d47;
   }
 
 textarea:focus,
@@ -144,7 +144,7 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 .uneditable-input:focus {
-    border: 2px solid #37B571;
+    border: 2px solid #078758;
     outline: 0 none;
 }
 
@@ -322,11 +322,11 @@ input[type="email"]:focus,
 }
 
 .logout-link {
-    color: #37B571;
+    color: #078758;
 }
 
 .verified {
-    color: #1b894f;
+    color: #078758;
 }
 
 .unverified {
