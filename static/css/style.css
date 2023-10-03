@@ -38,6 +38,12 @@ h3 {
     margin: 48px 0;
 }
 
+h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 24px 0;
+}
+
 .link {
     color: #37B571;
 }
@@ -114,6 +120,10 @@ h3 {
 
 .btn-danger {
     height: 48px;
+    font-weight: 600;
+}
+
+.btn-outline-danger {
     font-weight: 600;
 }
 
@@ -313,4 +323,12 @@ input[type="email"]:focus,
 
 .logout-link {
     color: #37B571;
+}
+
+.verified {
+    color: #1b894f;
+}
+
+.unverified {
+    color: #e08e00;
 }
