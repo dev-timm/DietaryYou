@@ -4,20 +4,43 @@
 
 <div class="container max-window-width">
     <h3 class="text-center">User Account</h3>
+    <div class="row mb-2">
+        <div class="col-10">
             <p class="user-details-label">Username</p>
             <p class="user-details">{{ user.username }}</p>
+        </div>
+        <div class="col-2">
+            <a href="#" class="float-end btn btn-sm icon-hover">
+                <img src="../static/images/icons/icon-edit.svg" alt="Edit username"></a>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-10">
             <p class="user-details-label">Email</p>
             {% if user.email %}
             <p class="user-details">{{ user.email }}</p>
             {% else %}
             <p class="user-details">Currently no email address added</p>
             {% endif %}
-            <p class="user-details-label">Password</p>
-            <p class="user-details">•••••••••••••••••••••••</p>
-            
-    <div class="mt-5">
-        <a class="logout-link" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+        </div>
+        <div class="col-2">
+            <a href="#" class="float-end btn btn-sm icon-hover">
+                <img src="../static/images/icons/icon-edit.svg" alt="Edit email address"></a>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-10">
+            <p class="user-details-label">Password</p>
+            <p class="user-details">••••••••••••••••</p>
+        </div>
+        <div class="col-2">
+            <a href="#" class="float-end btn btn-sm icon-hover">
+                <img src="../static/images/icons/icon-edit.svg" alt="Edit password"></a>
+        </div>
+    </div>
+<div class="mt-5">
+    <a class="logout-link" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+</div>
 
 
 </div>
