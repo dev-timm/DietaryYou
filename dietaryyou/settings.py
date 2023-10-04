@@ -63,7 +63,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 SUMMERNOTE_THEME = 'bs5'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-ACCOUNT_FORMS = {'login': 'blog.forms.SigninForm', 'signup': 'blog.forms.RegisterForm', 'add_email': 'blog.forms.EmailForm'}
+ACCOUNT_FORMS = {'login': 'blog.forms.SigninForm', 'signup': 'blog.forms.RegisterForm', 'add_email': 'blog.forms.EmailForm', 'change_password': 'blog.forms.PasswordForm'}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
