@@ -31,8 +31,7 @@
                                 width="16" height="16" viewBox="0 0 16 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_969_558)">
-                                    <path
-                                        d="M0 8C0 8.26522 0.105357 8.51957 0.292893 8.70711C0.48043 
+                                    <path d="M0 8C0 8.26522 0.105357 8.51957 0.292893 8.70711C0.48043 
                                         8.89464 0.734784 9 1 9H6.83333C6.87754 9 6.91993 9.01756 6.95118 
                                         9.04882C6.98244 9.08007 7 9.12246 7 9.16667V15C7 15.2652 7.10536 
                                         15.5196 7.29289 15.7071C7.48043 15.8946 7.73478 16 8 16C8.26522 16 
@@ -45,7 +44,7 @@
                                         0.105357 8.26522 0 8 0C7.73478 0 7.48043 0.105357 7.29289 0.292893C7.10536 
                                         0.48043 7 0.734784 7 1V6.83333C7 6.87754 6.98244 6.91993 6.95118 6.95118C6.91993 
                                         6.98244 6.87754 7 6.83333 7H1C0.734784 7 0.48043 7.10536 0.292893 7.29289C0.105357 
-                                        7.48043 0 7.73478 0 8Z"/>
+                                        7.48043 0 7.73478 0 8Z" />
                                 </g>
                                 <defs>
                                     <clipPath id="clip0_969_558">
@@ -70,6 +69,24 @@
             </div>
         </div>
     </nav>
+
+    <!-- ALERTS  -->
+
+    {% if messages %}
+    <div class="container alert-display fixed-top">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
 
     <!-- CONTENT -->
 
@@ -107,6 +124,14 @@
             </div>
         </div>
     </Footer>
+
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 3000);
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
