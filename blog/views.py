@@ -93,6 +93,7 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.add_message(self.request, messages.SUCCESS, "Your comment was submitted and is awaiting approval.")
         else:
             comment_form = CommentForm()
 

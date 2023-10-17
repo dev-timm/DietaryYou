@@ -66,9 +66,18 @@
             {% endfor %}
             <div class="col-md-12 mb-5 order-md-1">
                 {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
+                <div class="alert alert-info" role="alert">
+                    You have 1 or more comments pending for an approval.
                 </div>
+                {% if user.is_authenticated %}
+
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary float-end">Comment</button>
+                </form>
+                {% endif %}
                 {% else %}
                 {% if user.is_authenticated %}
 
