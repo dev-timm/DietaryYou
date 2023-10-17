@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from .models import Post
 from .forms import PostForm, EditForm, CommentForm
+from django.contrib import messages
 
 
 class PostList(generic.ListView):
@@ -19,8 +20,13 @@ class AddPost(generic.CreateView):
     template_name = 'add_post.html'
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)   
+        if form.is_valid():
+            form.instance.author = self.request.user
+            messages.add_message(self.request, messages.SUCCESS, "Your post was published successfully.")
+        else:
+            messages.add_message(self.request, messages.ERROR, "Ooops, something went wrong. Please try again!")
+
+        return super().form_valid(form)
 
 
 class EditPost(generic.UpdateView):
@@ -29,12 +35,24 @@ class EditPost(generic.UpdateView):
     form_class = EditForm
     template_name = 'edit_post.html'
 
+    def form_valid(self, form):
+        if form.is_valid():
+            messages.add_message(self.request, messages.SUCCESS, "Your post was edited successfully.")
+        else:
+            messages.add_message(self.request, messages.ERROR, "Ooops, something went wrong. Please try again!")
+
+        return super().form_valid(form)
+
 
 class DeletePost(generic.DeleteView):
 
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
+
+    def delete(self, request, *args, **kwargs):
+        messages.add_message(self.request, messages.SUCCESS, "Your post was deleted successfully.")
+        return super(DeletePost, self).delete(request, *args, **kwargs)
 
 
 class PostDetail(View):
