@@ -2,15 +2,26 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from .models import Post
+from .models import Post, Comment
 from .forms import PostForm, EditForm, CommentForm
 from django.contrib import messages
+from django.db.models import Count, Q
 
 
 class PostList(generic.ListView):
 
     model = Post
     template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        approved_comments = Count('comments', filter=Q(comments__approved=True))
+        post_list = Post.objects.all().annotate(approved_comments=approved_comments).order_by('-created_on')
+
+        context = {
+            'post_list': post_list
+        }
+        kwargs.update(context)
+        return super().get_context_data(**kwargs)
 
 
 class AddPost(generic.CreateView):

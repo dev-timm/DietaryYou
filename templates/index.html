@@ -3,27 +3,34 @@
 {% block content %}
 
 <div class="container">
-<h3 class="text-center">Most Recent Articles</h3>
+    <h3 class="text-center">Most Recent Articles</h3>
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-    {% for post in post_list %}
-    <div class="col">
-        <div class="card border-0">
-            {% if "placeholder" in post.featured_image.url %}
-            <img src="../static/images/placeholder-image.jpg" class="card-img-top">
-            {% else %}
-            <img src="{{ post.featured_image.url }}" class="card-img-top" alt="...">
-            {% endif %}
-            <div class="card-body  px-0">
-                <p class="author">{{ post.author }} <span class="float-end">{{ post.created_on}}</span></p>
-                <a href="{% url 'post_detail' post.slug %}" class="card-title">{{ post.title }}</a>
-                <p class="card-text">{{ post.excerpt }}</p>
-                <hr>
-                <p class="card-text text-muted"><img src="../static/images/icons/icon-like.svg" alt=""> {{ post.number_of_likes }}</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        {% for post in post_list %}
+        <div class="col">
+            <div class="card border-0">
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="../static/images/placeholder-image.jpg" class="card-img-top">
+                {% else %}
+                <img src="{{ post.featured_image.url }}" class="card-img-top" alt="...">
+                {% endif %}
+                <div class="card-body px-0">
+                    <p class="author">{{ post.author }} <span class="float-end">{{ post.created_on}}</span></p>
+                    <a href="{% url 'post_detail' post.slug %}" class="card-title">{{ post.title }}</a>
+                    <p class="card-text">{{ post.excerpt }}</p>
+                    <hr>
+                    <div>
+                        <p class="card-text text-muted d-inline-block like-display"><img
+                                src="../static/images/icons/icon-like.svg" alt="">
+                            {{ post.number_of_likes }}</p>
+                        <p class="card-text text-muted d-inline-block"><img
+                                src="../static/images/icons/icon-comment.svg" alt="">
+                            {{ post.approved_comments }}</p>
+                    </div>
+                </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}   
-</div>
 </div>
 {%endblock%}
