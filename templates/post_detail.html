@@ -1,4 +1,7 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content %}
 
 {% load crispy_forms_tags %}
 
@@ -11,10 +14,10 @@
             {% if user.is_authenticated and post.author.id == user.id %}
             <div class="col-2 pt-2">
                 <a href="{% url 'edit_post' post.slug %}" class="float-end btn btn-sm icon-hover">
-                    <img src="../static/images/icons/icon-edit.svg" alt="Edit Post">
+                    <img src="{% static 'images/icons/icon-edit.svg' %}" alt="Edit Post">
                 </a>
                 <a href="{% url 'delete_post' post.slug %}" class="float-end btn btn-sm icon-hover">
-                    <img src="../static/images/icons/icon-delete.svg" alt="Delete Post">
+                    <img src="{% static 'images/icons/icon-delete.svg' %}" alt="Delete Post">
                 </a>
             </div>
             {% endif %}
@@ -27,23 +30,23 @@
                 {% csrf_token %}
                 {% if liked %}
                 <button type="submit" class="button-liked" name="blogpost_id" value="{{post.slug}}"><img
-                        src="../static/images/icons/icon-liked.svg" alt=""> {{ post.number_of_likes }}</button>
+                        src="{% static 'images/icons/icon-liked.svg' %}" alt=""> {{ post.number_of_likes }}</button>
 
                 {% else %}
                 <button type="submit" class="button-like" name="blogpost_id" value="{{post.slug}}"><img
-                        src="../static/images/icons/icon-like.svg" alt=""> {{ post.number_of_likes }}</button>
+                        src="{% static 'images/icons/icon-like.svg' %}" alt=""> {{ post.number_of_likes }}</button>
 
                 {% endif %}
             </form>
             {% else %}
 
-            <span class="like-display"><img src="../static/images/icons/icon-like.svg" alt="">
+            <span class="like-display"><img src="{% static 'images/icons/icon-like.svg' %}" alt="">
                 {{ post.number_of_likes }}</span>
             {% endif %}
 
             {% with comments.count as total_comments %}
             <a href="#comment-section-link" class="card-text post-body comment-link"><img
-                    src="../static/images/icons/icon-comment.svg" alt="">
+                    src="{% static 'images/icons/icon-comment.svg' %}" alt="">
                 {{ total_comments }}</a>
             {% endwith %}
         </div>
