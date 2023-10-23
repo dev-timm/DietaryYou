@@ -6,18 +6,30 @@
 {% block content %}
 
 <div class="container max-window-width">
-    <h3 class="text-center">User Account</h3>
-        <div>
-            <p class="user-details-label">Username</p>
-            <p class="user-details">{{ user.username }}</p>
-        </div>
+    <h3 class="text-center">Settings</h3>
+    <div class="w-100 mb-4">
+        <ul class="d-flex mb-0 list-unstyled">
+            <li>
+                <a class="nav-link" href="{% url 'user_account' %}">Account</a>
+                <span style="display: block; height: 4px; width: 100%; background-color: green"></span>
+            </li>
+            <li class="nav-item-space">
+                <a class="nav-link" href="{% url 'user_profile' %}">Profile</a>
+            </li>
+        </ul>
+        <hr class="mt-0">
+    </div>
+    <div>
+        <p class="account-details-label">Username</p>
+        <p class="account-details">{{ user.username }}</p>
+    </div>
     <div class="row mb-2">
         <div class="col-10">
-            <p class="user-details-label">Email</p>
+            <p class="account-details-label">Email</p>
             {% if user.email %}
-            <p class="user-details">{{ user.email }}</p>
+            <p class="account-details">{{ user.email }}</p>
             {% else %}
-            <p class="user-details">Currently no email address added</p>
+            <p class="account-details">Currently no email address added</p>
             {% endif %}
         </div>
         <div class="col-2">

@@ -192,7 +192,7 @@ input[type="email"]:focus,
     font-weight: 400;
 }
 
-.account-link {
+.nav-item-space {
     margin-left: 16px;
 }
 
@@ -325,12 +325,17 @@ input[type="email"]:focus,
 
 /* ACCOUNT */
 
-.user-details {
+.account-details {
     font-weight: 700;
 }
 
-.user-details-label {
+.account-details-label {
     margin-bottom: 0px ;
+}
+
+.profile-details-label {
+    margin-bottom: 0px ;
+    font-weight: 700;
 }
 
 .logout-link {
@@ -343,4 +348,11 @@ input[type="email"]:focus,
 
 .unverified {
     color: #e08e00;
+}
+
+.profile-image {
+    height: 80px;
+    width: 80px;
+    border-radius: 80px;
+    border: 1px solid green;
 }
