@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic.base import TemplateView
+from .models import UserProfile
 
-# Create your views here.
+
+class ViewProfile(TemplateView):
+
+    model = UserProfile
+    template_name = 'user_profile.html'
