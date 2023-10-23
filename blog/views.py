@@ -132,9 +132,3 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-
-class UserAccount(generic.ListView):
-
-    model = Post
-    template_name = 'user_account.html'
