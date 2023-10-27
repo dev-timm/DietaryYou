@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary. models import CloudinaryField
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from django.urls import reverse
 
 
 class UserProfile(models.Model):
@@ -18,9 +19,13 @@ class UserProfile(models.Model):
     class Meta:
         ordering = ['full_name']
 
+    def get_absolute_url(self):
+        return reverse('user_profile')
+
     def save(self, *args, **kwargs):
         self.slug = self.user.username
         super(UserProfile, self).save(*args, **kwargs)
+
 
 @receiver(post_save, sender=User)
 def set_up_user_profile(sender, instance, created, **kwargs):

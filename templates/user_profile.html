@@ -33,7 +33,7 @@
                 {% endif %}
             </div>
             <div class="col-1 px-0 align-self-center">
-                <a href="#" class="float-end btn btn-sm icon-hover">
+                <a href="{% url 'edit_profile' user_profile_data.slug %}" class="float-end btn btn-sm icon-hover">
                     <img src="{% static 'images/icons/icon-edit.svg' %}" alt="Edit user profile"></a>
             </div>
         </div>

@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from django.views import View
+from django.views import generic, View
 from django.views.generic.base import TemplateView
 from .models import UserProfile
+from .forms import EditProfileForm
+from django.contrib import messages
 
 
 class UserAccount(TemplateView):
@@ -34,3 +36,18 @@ class ViewPublicProfile(View):
                 "user_profile_data": user_profile_data,
             },
         )
+
+
+class EditProfile(generic.UpdateView):
+
+    model = UserProfile
+    form_class = EditProfileForm
+    template_name = 'edit_user_profile.html'
+
+    def form_valid(self, form):
+        if form.is_valid():
+            messages.add_message(self.request, messages.SUCCESS, "Your profile was edited successfully.")
+        else:
+            messages.add_message(self.request, messages.ERROR, "Ooops, something went wrong. Please try again!")
+
+        return super().form_valid(form)
