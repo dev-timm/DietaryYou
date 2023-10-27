@@ -329,6 +329,13 @@ input[type="email"]:focus,
     font-weight: 700;
 }
 
+.nav-highlight {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #046d47;
+}
+
 .account-details-label {
     margin-bottom: 0px ;
 }

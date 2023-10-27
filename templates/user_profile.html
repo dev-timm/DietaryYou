@@ -12,38 +12,54 @@
             </li>
             <li class="nav-item-space">
                 <a class="nav-link" href="{% url 'user_profile' %}">Profile</a>
-                <span style="display: block; height: 4px; width: 100%; background-color: green"></span>
+                <span class="nav-highlight"></span>
             </li>
         </ul>
         <hr class="mt-0">
     </div>
         <div class="row mb-4">
-            <div class="col-2 profile-image">
-                {% if "placeholder" in profiles.profile_image.url %}
-                <img src="{% static 'images/icons/placeholder-settings.svg' %}">
+            <div class="col-3">
+                {% if "placeholder" in user_profile_data.profile_image.url %}
+                <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="profile-image">
                 {% else %}
-                <img src="{{ userprofile.profile_image.url }}">
+                <img src="{{ user_profile_data.profile_image.url }}" class="profile-image">
                 {% endif %}
             </div>
-            <div class="col-9">
+            <div class="col-8 px-0">
+                {% if user_profile_data.full_name %}
+                <h4>{{ user_profile_data.full_name }}</h4>
+                {% else %}
                 <h4>{{ user.username }}</h4>
+                {% endif %}
             </div>
-            <div class="col-1">
+            <div class="col-1 px-0 align-self-center">
                 <a href="#" class="float-end btn btn-sm icon-hover">
                     <img src="{% static 'images/icons/icon-edit.svg' %}" alt="Edit user profile"></a>
             </div>
         </div>
     <div>
         <p class="profile-details-label">Bio</p>
-        <p>{{ userprofile }}</p>
+        {% if user_profile_data.bio %}
+        <p>{{ user_profile_data.bio }}</p>
+        {% else %}
+        <p>N/A</p>
+        {% endif %}
     </div>
     <div>
         <p class="profile-details-label">Hobbies</p>
-        <p"></p>
+        {% if user_profile_data.hobbies %}
+        <p>{{ user_profile_data.hobbies }}</p>
+        {% else %}
+        <p>N/A</p>
+        {% endif %}
     </div>
     <div>
         <p class="profile-details-label">Location</p>
-        <p"></p>
+        {% if user_profile_data.location %}
+        <p>{{ user_profile_data.location }}</p>
+        {% else %}
+        <p>N/A</p>
+        {% endif %}
     </div>
 </div>
 
