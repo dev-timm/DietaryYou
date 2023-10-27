@@ -255,6 +255,8 @@ input[type="email"]:focus,
 
 .author {
     font-weight: 600;
+    text-decoration: none;
+    color: #333;
 }
 
 .comment-date {
@@ -265,6 +267,14 @@ input[type="email"]:focus,
 .card-img-top {
     height: 200px;
     object-fit: cover;
+}
+
+.post-profile-image {
+    height: 28px;
+    width: 28px;
+    border-radius: 28px;
+    border: 1px solid #046d47;
+    margin-right: 4px;
 }
 
 /* POST LIST */

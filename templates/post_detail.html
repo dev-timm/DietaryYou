@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
@@ -13,6 +13,11 @@
             </div>
             {% if user.is_authenticated and post.author.id == user.id %}
             <div class="col-2 pt-2">
+                {% if "placeholder" in user.userprofile.profile_image.url %}
+                <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="nav-profile-image">
+                {% else %}
+                <img src="{{ user.userprofile.profile_image.url }}" class="nav-profile-image">
+                {% endif %}
                 <a href="{% url 'edit_post' post.slug %}" class="float-end btn btn-sm icon-hover">
                     <img src="{% static 'images/icons/icon-edit.svg' %}" alt="Edit Post">
                 </a>
@@ -22,7 +27,15 @@
             </div>
             {% endif %}
         </div>
-        <p class="author"><a href="{% url 'public_user_profile' post.author %}">{{ post.author }}</a><span> | {{ post.created_on}}</span></p>
+        <p>
+            {% if "placeholder" in post.author.userprofile.profile_image.url %}
+            <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image">
+            {% else %}
+            <img src="{{ post.author.userprofile.profile_image.url }}" class="post-profile-image">
+            {% endif %}
+            <a href="{% url 'public_user_profile' post.author %}" class="author">{{ post.author }}</a><span> |
+                {{ post.created_on}}</span>
+        </p>
         <hr>
         <div>
             {% if user.is_authenticated %}
