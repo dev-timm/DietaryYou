@@ -16,7 +16,7 @@
                 <img src="{{ post.featured_image.url }}" class="card-img-top" alt="...">
                 {% endif %}
                 <div class="card-body px-0">
-                    <p class="author"><a href="#">{{ post.author }}</a> <span class="float-end">{{ post.created_on.date}}</span></p>
+                    <p class="author"><a href="{% url 'public_user_profile' post.author %}">{{ post.author }}</a> <span class="float-end">{{ post.created_on.date}}</span></p>
                     <a href="{% url 'post_detail' post.slug %}" class="card-title">{{ post.title }}</a>
                     <p class="card-text">{{ post.excerpt }}</p>
                     <hr>

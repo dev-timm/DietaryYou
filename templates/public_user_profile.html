@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container max-window-width">
+    <h3 class="text-center">Profile of {{ user_profile_data.slug }}</h3>
+        <div class="row mb-4">
+            <div class="col-3">
+                {% if "placeholder" in user_profile_data.profile_image.url %}
+                <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="profile-image">
+                {% else %}
+                <img src="{{ user_profile_data.profile_image.url }}" class="profile-image">
+                {% endif %}
+            </div>
+            <div class="col-9 px-0">
+                {% if user_profile_data.full_name %}
+                <h4>{{ user_profile_data.full_name }}</h4>
+                {% else %}
+                <h4>{{ user_profile_data.slug }}</h4>
+                {% endif %}
+            </div>
+        </div>
+    <div>
+        <p class="profile-details-label">Bio</p>
+        {% if user_profile_data.bio %}
+        <p>{{ user_profile_data.bio }}</p>
+        {% else %}
+        <p>N/A</p>
+        {% endif %}
+    </div>
+    <div>
+        <p class="profile-details-label">Hobbies</p>
+        {% if user_profile_data.hobbies %}
+        <p>{{ user_profile_data.hobbies }}</p>
+        {% else %}
+        <p>N/A</p>
+        {% endif %}
+    </div>
+    <div>
+        <p class="profile-details-label">Location</p>
+        {% if user_profile_data.location %}
+        <p>{{ user_profile_data.location }}</p>
+        {% else %}
+        <p>N/A</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %} 
