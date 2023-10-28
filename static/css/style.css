@@ -23,6 +23,10 @@ body {
     max-width: 500px;
 }
 
+.site-content {
+    margin-top: 160px;
+}
+
 /* GENERAL */
 
 /* STYLES */
@@ -247,6 +251,7 @@ input[type="email"]:focus,
 /* HOMEPAGE */
 
 .hero {
+    margin-top: -85px;
     height: 540px;
 }
 
@@ -264,13 +269,13 @@ input[type="email"]:focus,
     margin-bottom: 32px;
 }
 
+.hp-posts-section {
+    margin-top: 120px;
+}
+
 /* HOMEPAGE */
 
 /* POST LIST */
-
-.site-content {
-    margin-top: 75px;
-}
 
 .row .card {
     padding: 0;
