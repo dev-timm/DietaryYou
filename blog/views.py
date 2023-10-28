@@ -15,7 +15,7 @@ class PostList(generic.ListView):
 
     def get_context_data(self, **kwargs):
         approved_comments = Count('comments', filter=Q(comments__approved=True))
-        post_list = Post.objects.all().annotate(approved_comments=approved_comments).order_by('-created_on')
+        post_list = Post.objects.filter(status=1).annotate(approved_comments=approved_comments).order_by('-created_on')
 
         context = {
             'post_list': post_list
@@ -69,7 +69,7 @@ class DeletePost(generic.DeleteView):
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
+        queryset = Post.objects.all()
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
         liked = False
