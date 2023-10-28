@@ -3,11 +3,32 @@
 
 {% block content %}
 
+<div class="container-fluid hero-bg">
+    <div class="container">
+        {% if user.is_authenticated %}
+        <div class="row hero">
+            <div class="col-5 align-self-center">
+                <h1 class="hero-headline">Join and <span>become</span> <br> part of our <br> <span>healthy</span>
+                    community
+                </h1>
+                <p class="subline">Explore different diets by exchanging recipes and helpful tips.</p>
+                <a href="{% url 'account_signup' %}" class="btn btn-primary">Join Now</a>
+            </div>
+            <div class="col-1">
+
+            </div>
+            <div class="col-6 align-self-center">
+                <img src="{% static 'images/hero-image.png' %}" alt="">
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
 <div class="container">
-    <h3 class="text-center">Most Recent Articles</h3>
+    <h3 class="text-center">Most Popular Posts</h3>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-        {% for post in post_list %}
+        {% for post in popular_posts %}
         <div class="col">
             <div class="card border-0">
                 {% if "placeholder" in post.featured_image.url %}
@@ -40,6 +61,46 @@
             </div>
         </div>
         {% endfor %}
+        <a href="{% url 'account_signup' %}" class="btn btn-outline-primary d-block mx-auto mb-5">Ready to join?</a>
+    </div>
+
+    <h3 class="text-center">Latest Posts</h3>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        {% for post in latest_posts %}
+        <div class="col">
+            <div class="card border-0">
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="{% static 'images/placeholder-image.jpg' %}" class="card-img-top">
+                {% else %}
+                <img src="{{ post.featured_image.url }}" class="card-img-top" alt="...">
+                {% endif %}
+                <div class="card-body px-0">
+                    <p>
+                        {% if "placeholder" in post.author.userprofile.profile_image.url %}
+                        <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image">
+                        {% else %}
+                        <img src="{{ post.author.userprofile.profile_image.url }}" class="post-profile-image">
+                        {% endif %}
+                        <a href="{% url 'public_user_profile' post.author %}" class="author">{{ post.author }}</a> <span
+                            class="float-end">{{ post.created_on.date}}</span>
+                    </p>
+                    <a href="{% url 'post_detail' post.slug %}" class="card-title">{{ post.title }}</a>
+                    <p class="card-text">{{ post.excerpt }}</p>
+                    <hr>
+                    <div>
+                        <p class="card-text text-muted d-inline-block like-display"><img
+                                src="{% static 'images/icons/icon-like.svg' %}" alt="">
+                            {{ post.number_of_likes }}</p>
+                        <p class="card-text text-muted d-inline-block"><img
+                                src="{% static 'images/icons/icon-comment.svg' %}" alt="">
+                            {{ post.approved_comments }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <a href="{% url 'account_signup' %}" class="btn btn-outline-primary d-block mx-auto mb-5">Sign up for more</a>
     </div>
 </div>
 {%endblock%}

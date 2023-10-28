@@ -11,7 +11,7 @@ from django.db.models import Count, Q
 class PostList(generic.ListView):
 
     model = Post
-    template_name = 'index.html'
+    template_name = 'blog.html'
 
     def get_context_data(self, **kwargs):
         approved_comments = Count('comments', filter=Q(comments__approved=True))
