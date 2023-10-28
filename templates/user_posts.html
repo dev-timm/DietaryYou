@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container max-window-width">
+    <h3 class="text-center">Settings</h3>
+    <div class="w-100 mb-4">
+        <ul class="d-flex mb-0 list-unstyled">
+            <li>
+                <a class="nav-link" href="{% url 'user_account' %}">Account</a>
+            </li>
+            <li class="nav-item-space">
+                <a class="nav-link" href="{% url 'user_profile' %}">Profile</a>
+            </li>
+            <li class="nav-item-space">
+                <a class="nav-link" href="{% url 'user_posts' %}">Posts</a>
+                <span class="nav-highlight"></span>
+            </li>
+        </ul>
+        <hr class="mt-0">
+    </div>
+
+    <h4 class="text-center">Draft Posts</h4>
+    {% if draft_posts.count > 0 %}
+    <div class="row row-cols-1 row-cols-sm-2 g-4">
+        {% for post in draft_posts %}
+        <div class="col">
+            <div class="card border-0">
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="{% static 'images/placeholder-image.jpg' %}" class="card-img-top-account">
+                {% else %}
+                <img src="{{ post.featured_image.url }}" class="card-img-top-account" alt="...">
+                {% endif %}
+                <div class="card-body px-0">
+                    <p>
+                        {% if "placeholder" in post.author.userprofile.profile_image.url %}
+                        <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image">
+                        {% else %}
+                        <img src="{{ post.author.userprofile.profile_image.url }}" class="post-profile-image">
+                        {% endif %}
+                        <a href="{% url 'public_user_profile' post.author %}" class="author">{{ post.author }}</a>
+                        <span class="float-end">{{ post.created_on.date}}</span>
+                    </p>
+                    <a href="{% url 'post_detail' post.slug %}" class="card-title">{{ post.title }}</a>
+                    <hr>
+                    <div>
+                        <p class="card-text text-muted d-inline-block like-display"><img
+                                src="{% static 'images/icons/icon-like.svg' %}" alt="">
+                            {{ post.number_of_likes }}</p>
+                        <p class="card-text text-muted d-inline-block"><img
+                                src="{% static 'images/icons/icon-comment.svg' %}" alt="">
+                            {{ post.approved_comments }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div>
+        <p class="text-center">Currently you don't have any draft posts.</p>
+    </div>
+    {% endif %}
+
+    <h4 class="text-center">Published Posts</h4>
+    {% if published_posts.count > 0 %}
+    <div class="row row-cols-1 row-cols-sm-2 g-4">
+        {% for post in published_posts %}
+        <div class="col">
+            <div class="card border-0">
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="{% static 'images/placeholder-image.jpg' %}" class="card-img-top-account">
+                {% else %}
+                <img src="{{ post.featured_image.url }}" class="card-img-top-account" alt="...">
+                {% endif %}
+                <div class="card-body px-0">
+                    <p>
+                        {% if "placeholder" in post.author.userprofile.profile_image.url %}
+                        <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image">
+                        {% else %}
+                        <img src="{{ post.author.userprofile.profile_image.url }}" class="post-profile-image">
+                        {% endif %}
+                        <a href="{% url 'public_user_profile' post.author %}" class="author">{{ post.author }}</a>
+                        <span class="float-end">{{ post.created_on.date}}</span>
+                    </p>
+                    <a href="{% url 'post_detail' post.slug %}" class="card-title">{{ post.title }}</a>
+                    <hr>
+                    <div>
+                        <p class="card-text text-muted d-inline-block like-display"><img
+                                src="{% static 'images/icons/icon-like.svg' %}" alt="">
+                            {{ post.number_of_likes }}</p>
+                        <p class="card-text text-muted d-inline-block"><img
+                                src="{% static 'images/icons/icon-comment.svg' %}" alt="">
+                            {{ post.approved_comments }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div>
+        <p class="text-center">Currently you don't have any published posts.</p>
+    </div>
+    {% endif %}
+</div>
+
+
+{%endblock%}
