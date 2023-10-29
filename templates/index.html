@@ -35,7 +35,7 @@
                 <img src="{{ post.featured_image.url }}" class="card-img-top" alt="Image for teaser post">
                 {% endif %}
                 <div class="card-body px-0">
-                    <p>
+                    <div>
                         {% if "placeholder" in post.author.userprofile.profile_image.url %}
                         <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image" alt="Placeholder for user profile image">
                         {% else %}
@@ -43,7 +43,7 @@
                         {% endif %}
                         <a href="{% url 'public_user_profile' post.author %}" class="author">{{ post.author }}</a> <span
                             class="float-end">{{ post.created_on.date}}</span>
-                    </p>
+                    </div>
                     <a href="{% url 'post_detail' post.slug %}" class="card-title">{{ post.title }}</a>
                     <p class="card-text">{{ post.excerpt }}</p>
                     <hr>
@@ -74,7 +74,7 @@
                 <img src="{{ post.featured_image.url }}" class="card-img-top" alt="Image for teaser post">
                 {% endif %}
                 <div class="card-body px-0">
-                    <p>
+                    <div>
                         {% if "placeholder" in post.author.userprofile.profile_image.url %}
                         <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image" alt="Placeholder for user profile image">
                         {% else %}
@@ -82,7 +82,7 @@
                         {% endif %}
                         <a href="{% url 'public_user_profile' post.author %}" class="author">{{ post.author }}</a> <span
                             class="float-end">{{ post.created_on.date}}</span>
-                    </p>
+                    </div>
                     <a href="{% url 'post_detail' post.slug %}" class="card-title">{{ post.title }}</a>
                     <p class="card-text">{{ post.excerpt }}</p>
                     <hr>
