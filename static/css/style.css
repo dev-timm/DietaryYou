@@ -195,8 +195,14 @@ input[type="email"]:focus,
 
 .logo {
     font-size: 2rem;
+    color: #333;
     font-weight: 700;
     margin-right: 32px;
+}
+
+.logo:hover {
+    font-size: 2rem;
+    color: #333;
 }
 
 .logo span {
@@ -283,13 +289,22 @@ input[type="email"]:focus,
 
 .card-title {
     text-decoration: none;
+    color: #333;
     font-size: 20px;
     font-weight: 600;
+}
+
+.card-title:hover {
+    color: #333;
 }
 
 .author {
     font-weight: 600;
     text-decoration: none;
+    color: #333;
+}
+
+.author:hover {
     color: #333;
 }
 
@@ -343,13 +358,11 @@ input[type="email"]:focus,
 }
 
 .button-like {
-    /* background: url('../images/icons/icon-like.svg') no-repeat center center; */
     background-color: #fff;
     border: none;
 }
 
 .button-liked {
-    /* background: url('../images/icons/icon-like.svg') no-repeat center center; */
     background-color: #fff;
     border: none;
 }
