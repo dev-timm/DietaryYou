@@ -28,16 +28,16 @@
         <div class="col">
             <div class="card border-0">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="{% static 'images/placeholder-image.jpg' %}" class="card-img-top-account">
+                <img src="{% static 'images/placeholder-image.jpg' %}" class="card-img-top-account" alt="Placeholder image for teaser post">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" class="card-img-top-account" alt="...">
+                <img src="{{ post.featured_image.url }}" class="card-img-top-account" alt="Image for teaser post">
                 {% endif %}
                 <div class="card-body px-0">
                     <p>
                         {% if "placeholder" in post.author.userprofile.profile_image.url %}
-                        <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image">
+                        <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image"  alt="Placeholder for user profile image">
                         {% else %}
-                        <img src="{{ post.author.userprofile.profile_image.url }}" class="post-profile-image">
+                        <img src="{{ post.author.userprofile.profile_image.url }}" class="post-profile-image"  alt="User profile image">
                         {% endif %}
                         <a href="{% url 'public_user_profile' post.author %}" class="author">{{ post.author }}</a>
                         <span class="float-end">{{ post.created_on.date}}</span>
@@ -45,11 +45,11 @@
                     <a href="{% url 'post_detail' post.slug %}" class="card-title">{{ post.title }}</a>
                     <hr>
                     <div>
-                        <p class="card-text text-muted d-inline-block like-display"><img
-                                src="{% static 'images/icons/icon-like.svg' %}" alt="">
+                        <p class="card-text text-muted d-inline-block like-display">
+                            <img src="{% static 'images/icons/icon-like.svg' %}" alt="Number of likes">
                             {{ post.number_of_likes }}</p>
-                        <p class="card-text text-muted d-inline-block"><img
-                                src="{% static 'images/icons/icon-comment.svg' %}" alt="">
+                        <p class="card-text text-muted d-inline-block">
+                            <img src="{% static 'images/icons/icon-comment.svg' %}" alt="Number of comments">
                             {{ post.approved_comments }}</p>
                     </div>
                 </div>
@@ -70,16 +70,16 @@
         <div class="col">
             <div class="card border-0">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="{% static 'images/placeholder-image.jpg' %}" class="card-img-top-account">
+                <img src="{% static 'images/placeholder-image.jpg' %}" class="card-img-top-account" alt="Placeholder image for teaser post">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" class="card-img-top-account" alt="...">
+                <img src="{{ post.featured_image.url }}" class="card-img-top-account" alt="Image for teaser post">
                 {% endif %}
                 <div class="card-body px-0">
                     <p>
                         {% if "placeholder" in post.author.userprofile.profile_image.url %}
-                        <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image">
+                        <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image" alt="Placeholder for user profile image">
                         {% else %}
-                        <img src="{{ post.author.userprofile.profile_image.url }}" class="post-profile-image">
+                        <img src="{{ post.author.userprofile.profile_image.url }}" class="post-profile-image"  alt="User profile image">
                         {% endif %}
                         <a href="{% url 'public_user_profile' post.author %}" class="author">{{ post.author }}</a>
                         <span class="float-end">{{ post.created_on.date}}</span>
@@ -87,11 +87,11 @@
                     <a href="{% url 'post_detail' post.slug %}" class="card-title">{{ post.title }}</a>
                     <hr>
                     <div>
-                        <p class="card-text text-muted d-inline-block like-display"><img
-                                src="{% static 'images/icons/icon-like.svg' %}" alt="">
+                        <p class="card-text text-muted d-inline-block like-display">
+                            <img src="{% static 'images/icons/icon-like.svg' %}" alt="Number of likes">
                             {{ post.number_of_likes }}</p>
-                        <p class="card-text text-muted d-inline-block"><img
-                                src="{% static 'images/icons/icon-comment.svg' %}" alt="">
+                        <p class="card-text text-muted d-inline-block">
+                            <img src="{% static 'images/icons/icon-comment.svg' %}" alt="Number of comments">
                             {{ post.approved_comments }}</p>
                     </div>
                 </div>

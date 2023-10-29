@@ -8,9 +8,9 @@
         <div class="row mb-4">
             <div class="col-3">
                 {% if "placeholder" in user_profile_data.profile_image.url %}
-                <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="profile-image">
+                <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="profile-image"  alt="Placeholder for user profile image">
                 {% else %}
-                <img src="{{ user_profile_data.profile_image.url }}" class="profile-image">
+                <img src="{{ user_profile_data.profile_image.url }}" class="profile-image"  alt="User profile image">
                 {% endif %}
             </div>
             <div class="col-9 px-0">

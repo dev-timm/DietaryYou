@@ -14,19 +14,19 @@
             {% if user.is_authenticated and post.author.id == user.id %}
             <div class="col-2 pt-2">
                 <a href="{% url 'edit_post' post.slug %}" class="float-end btn btn-sm icon-hover">
-                    <img src="{% static 'images/icons/icon-edit.svg' %}" alt="Edit Post">
+                    <img src="{% static 'images/icons/icon-edit.svg' %}" alt="Edit post">
                 </a>
                 <a href="{% url 'delete_post' post.slug %}" class="float-end btn btn-sm icon-hover">
-                    <img src="{% static 'images/icons/icon-delete.svg' %}" alt="Delete Post">
+                    <img src="{% static 'images/icons/icon-delete.svg' %}" alt="Delete post">
                 </a>
             </div>
             {% endif %}
         </div>
         <div class="mt-2">
             {% if "placeholder" in post.author.userprofile.profile_image.url %}
-            <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image">
+            <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="post-profile-image" alt="Placeholder for user profile image">
             {% else %}
-            <img src="{{ post.author.userprofile.profile_image.url }}" class="post-profile-image">
+            <img src="{{ post.author.userprofile.profile_image.url }}" class="post-profile-image" alt="User profile image">
             {% endif %}
             <a href="{% url 'public_user_profile' post.author %}" class="author">{{ post.author }}</a><span> |
                 {{ post.created_on}}</span>
@@ -37,24 +37,24 @@
             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                 {% csrf_token %}
                 {% if liked %}
-                <button type="submit" class="button-liked" name="blogpost_id" value="{{post.slug}}"><img
-                        src="{% static 'images/icons/icon-liked.svg' %}" alt=""> {{ post.number_of_likes }}</button>
+                <button type="submit" class="button-liked" name="blogpost_id" value="{{post.slug}}">
+                    <img src="{% static 'images/icons/icon-liked.svg' %}" alt="Liked Post"> {{ post.number_of_likes }}</button>
 
                 {% else %}
-                <button type="submit" class="button-like" name="blogpost_id" value="{{post.slug}}"><img
-                        src="{% static 'images/icons/icon-like.svg' %}" alt=""> {{ post.number_of_likes }}</button>
+                <button type="submit" class="button-like" name="blogpost_id" value="{{post.slug}}">
+                    <img src="{% static 'images/icons/icon-like.svg' %}" alt="Not liked post"> {{ post.number_of_likes }}</button>
 
                 {% endif %}
             </form>
             {% else %}
 
-            <span class="like-display"><img src="{% static 'images/icons/icon-like.svg' %}" alt="">
+            <span class="like-display"><img src="{% static 'images/icons/icon-like.svg' %}" alt="Number of likes">
                 {{ post.number_of_likes }}</span>
             {% endif %}
 
             {% with comments.count as total_comments %}
-            <a href="#comment-section-link" class="card-text post-body comment-link"><img
-                    src="{% static 'images/icons/icon-comment.svg' %}" alt="">
+            <a href="#comment-section-link" class="card-text post-body comment-link">
+                <img src="{% static 'images/icons/icon-comment.svg' %}" alt="Comment Icon">
                 {{ total_comments }}</a>
             {% endwith %}
         </div>
