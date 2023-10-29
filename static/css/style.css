@@ -343,12 +343,14 @@ input[type="email"]:focus,
 }
 
 .button-like {
-    background: url('../images/icons/like.svg') no-repeat center center;
+    /* background: url('../images/icons/icon-like.svg') no-repeat center center; */
+    background-color: #fff;
     border: none;
 }
 
 .button-liked {
-    background: url('../images/icons/like.svg') no-repeat center center;
+    /* background: url('../images/icons/icon-like.svg') no-repeat center center; */
+    background-color: #fff;
     border: none;
 }
 
@@ -425,7 +427,7 @@ input[type="email"]:focus,
 /* 404 */
 
 .error-bg {
-    background: url('../images/404-bg.jpg') no-repeat center center;
+    background: url('/static/images/404-bg.jpg') no-repeat center center;
     margin-top: -160px;
     margin-bottom: -100px;
 }
