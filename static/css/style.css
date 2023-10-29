@@ -419,3 +419,23 @@ input[type="email"]:focus,
     height: 100px;
     object-fit: cover;
 }
+
+/* ACCOUNT */
+
+/* 404 */
+
+.error-bg {
+    background: url('../images/404-bg.jpg') no-repeat center center;
+    margin-top: -160px;
+    margin-bottom: -100px;
+}
+
+.content-box {
+    height: 100vh
+}
+
+.text-highlight {
+    color: #046d47;
+}
+
+/* 404 */
