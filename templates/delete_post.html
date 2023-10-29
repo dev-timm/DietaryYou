@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<!-- DELETE A POST PAGE -->
+
 <div class="container max-window-width">
     {% if user.is_authenticated and post.author.id == user.id %}
     <h3 class="text-center">Delete Post</h3>

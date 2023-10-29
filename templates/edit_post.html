@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<!-- EDIT A POST PAGE -->
+
 <div class="container max-article-width form-bottom-margin">
     {% if user.is_authenticated and post.author.id == user.id %}
     <h3 class="text-center">Edit Post</h3>

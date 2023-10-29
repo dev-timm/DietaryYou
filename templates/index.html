@@ -3,6 +3,8 @@
 
 {% block content %}
 
+<!-- HERO SECTION -->
+
 <div class="container-fluid hero-bg">
     <div class="container">
         <div class="row hero">
@@ -22,7 +24,11 @@
         </div>
     </div>
 </div>
+
 <div class="container hp-posts-section">
+
+    <!-- MOST POPULAR POST SECTION -->
+
     <h3 class="text-center">Most Popular Posts</h3>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
@@ -61,6 +67,8 @@
         {% endfor %}
         <a href="{% url 'account_signup' %}" class="btn btn-outline-primary d-block mx-auto mb-5">Ready to join?</a>
     </div>
+
+    <!-- LATEST POST SECTION -->
 
     <h3 class="text-center">Latest Posts</h3>
 

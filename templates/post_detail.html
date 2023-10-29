@@ -5,7 +5,12 @@
 
 {% load crispy_forms_tags %}
 
+<!-- POST DETAIL PAGE -->
+
 <div class="container max-article-width">
+
+    <!-- POST HEAD SECTION -->
+
     <div class="post-head">
         <div class="row">
             <div class="col-10">
@@ -29,7 +34,7 @@
             <img src="{{ post.author.userprofile.profile_image.url }}" class="post-profile-image" alt="User profile image">
             {% endif %}
             <a href="{% url 'public_user_profile' post.author %}" class="author">{{ post.author }}</a><span> |
-                {{ post.created_on}}</span>
+                {{ post.created_on.date}}</span>
         </div>
         <hr>
         <div>
@@ -59,10 +64,15 @@
             {% endwith %}
         </div>
     </div>
+
+    <!-- POST CONTENT SECTION -->
+
     <div class="post-content">
         {{ post.content | safe }}
         <hr>
     </div>
+
+    <!-- POST COMMENTS SECTION -->
 
     <div class="post-comments" id="comment-section-link">
         <h3>Comments</h3>
