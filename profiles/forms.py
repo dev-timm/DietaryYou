@@ -3,6 +3,9 @@ from django import forms
 
 
 class EditProfileForm(forms.ModelForm):
+
+    """Fields and styles for editing the user profile"""
+
     class Meta:
         model = UserProfile
         fields = ('full_name', 'profile_image', 'bio', 'hobbies', 'location')

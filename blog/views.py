@@ -10,6 +10,8 @@ from django.db.models import Count, Q
 
 class PostList(generic.ListView):
 
+    """A view to show a list of all posts and the number of comments"""
+
     model = Post
     template_name = 'blog.html'
 
@@ -25,6 +27,8 @@ class PostList(generic.ListView):
 
 
 class AddPost(generic.CreateView):
+    
+    """A view to create a new post with the author being the signed in user """
 
     model = Post
     form_class = PostForm
@@ -42,6 +46,8 @@ class AddPost(generic.CreateView):
 
 class EditPost(generic.UpdateView):
 
+    """A view to edit a post"""
+
     model = Post
     form_class = EditForm
     template_name = 'edit_post.html'
@@ -57,6 +63,8 @@ class EditPost(generic.UpdateView):
 
 class DeletePost(generic.DeleteView):
 
+    """A view to delete a post"""
+
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
@@ -67,6 +75,8 @@ class DeletePost(generic.DeleteView):
 
 
 class PostDetail(View):
+
+    """A view to view a post and like/comment on it"""
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.all()
@@ -122,6 +132,8 @@ class PostDetail(View):
 
 
 class PostLike(View):
+
+    """A view to like a post"""
 
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)

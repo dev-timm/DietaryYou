@@ -10,10 +10,14 @@ from django.contrib import messages
 
 class UserAccount(TemplateView):
 
+    """A view to show the user account page"""
+
     template_name = 'user_account.html'
 
 
 class ViewProfile(TemplateView):
+
+    """A view for users to access their own profile page"""
 
     template_name = 'user_profile.html'
 
@@ -26,6 +30,8 @@ class ViewProfile(TemplateView):
 
 
 class ViewPublicProfile(View):
+
+    """A view for users to view another users profile"""
 
     def get(self, request, slug, *args, **kwargs):
         queryset = UserProfile.objects.all()
@@ -42,6 +48,8 @@ class ViewPublicProfile(View):
 
 class EditProfile(generic.UpdateView):
 
+    """A view for users edit their own profile"""
+
     model = UserProfile
     form_class = EditProfileForm
     template_name = 'edit_user_profile.html'
@@ -56,6 +64,8 @@ class EditProfile(generic.UpdateView):
 
 
 class ViewUserPosts(TemplateView):
+
+    """A view for users to view their own draft and published posts"""
 
     template_name = 'user_posts.html'
 

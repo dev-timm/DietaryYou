@@ -5,6 +5,8 @@ from django.db.models import Count, Q
 
 class ViewHomepage(TemplateView):
 
+    """A view to show the homepage containing the 3 most liked and recent posts"""
+
     template_name = 'index.html'
 
     def get_context_data(self, **kwargs):

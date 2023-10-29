@@ -5,6 +5,9 @@ from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
 class PostForm(forms.ModelForm):
+
+    """Fields and styles for creating a post"""
+
     class Meta:
         model = Post
         fields = ('title', 'featured_image', 'slug', 'content', 'excerpt', 'status')
@@ -14,11 +17,14 @@ class PostForm(forms.ModelForm):
             'featured_image': forms.FileInput(attrs={'class': 'form-control form-control-lg'}),
             'content': SummernoteWidget(),
             'excerpt': forms.Textarea(attrs={'class': 'form-control form-control-lg excerpt-height',  'placeholder': 'Enter a short summary of the post'}),
-            'status': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),            
+            'status': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),
         }
 
 
 class EditForm(forms.ModelForm):
+
+    """Fields and styles for editing a post"""
+
     class Meta:
         model = Post
         fields = ('title', 'featured_image', 'slug', 'content', 'excerpt', 'status')
@@ -28,17 +34,23 @@ class EditForm(forms.ModelForm):
             'featured_image': forms.FileInput(attrs={'class': 'form-control form-control-lg'}),
             'content': SummernoteWidget(),
             'excerpt': forms.Textarea(attrs={'class': 'form-control form-control-lg excerpt-height', 'placeholder': 'Enter a short summary of the post'}),
-            'status': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),            
+            'status': forms.Select(attrs={'class': 'form-control form-control-lg form-select'}),
         }
 
 
 class CommentForm(forms.ModelForm):
+
+    """Fields for the post comments"""
+
     class Meta:
         model = Comment
         fields = ('body',)
 
 
 class SigninForm(LoginForm):
+
+    """Fields and styles for the sign in form"""
+
     def __init__(self, *args, **kwargs):
         super(SigninForm, self).__init__(*args, **kwargs)
         self.fields['login'].widget = forms.TextInput(attrs={'class': 'form-control form-control-lg'})
@@ -47,6 +59,9 @@ class SigninForm(LoginForm):
 
 
 class RegisterForm(SignupForm):
+
+    """Fields and styles for the sign up form"""
+    
     def __init__(self, *args, **kwargs):
         super(RegisterForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget = forms.TextInput(attrs={'class': 'form-control form-control-lg'})
@@ -56,6 +71,9 @@ class RegisterForm(SignupForm):
 
 
 class PasswordForm(ChangePasswordForm):
+
+    """Fields and styles for the change password form"""
+
     def __init__(self, *args, **kwargs):
         super(PasswordForm, self).__init__(*args, **kwargs)
         self.fields['oldpassword'].widget = forms.PasswordInput(attrs={'class': 'form-control form-control-lg'})
@@ -64,6 +82,9 @@ class PasswordForm(ChangePasswordForm):
 
 
 class EmailForm(AddEmailForm):
+
+    """Fields and styles for the add/edit email form """
+
     def __init__(self, *args, **kwargs):
         super(EmailForm, self).__init__(*args, **kwargs)
         self.fields['email'].widget = forms.EmailInput(attrs={'class': 'form-control form-control-lg'})
