@@ -27,7 +27,9 @@
             <a class="navbar-brand logo" href="{% url 'home' %}">Dietary<span>You</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">
+                    <img src="{% static 'images/icons/icon-menu.svg' %}" alt="">
+                </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -66,7 +68,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="nav-item nav-item-space">
+                    <li class="nav-item nav-item-space align-self-center">
                         <a class="nav-link active" aria-current="page" href="{% url 'user_account' %}">
                             {% if "placeholder" in user.userprofile.profile_image.url %}
                             <img src="{% static 'images/icons/placeholder-settings.svg' %}" class="nav-profile-image" alt="Placeholder for user profile image">

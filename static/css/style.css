@@ -220,6 +220,10 @@ input[type="email"]:focus,
     border: 1px solid #046d47;
 }
 
+.navbar-toggler {
+    border-color: #676767;
+}
+
 /* NAV */
 
 /* FOOTER */
