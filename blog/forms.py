@@ -40,7 +40,7 @@ class EditForm(forms.ModelForm):
 
 class CommentForm(forms.ModelForm):
 
-    """Fields for the post comments"""
+    """Fields for the comments"""
 
     class Meta:
         model = Comment

@@ -104,7 +104,7 @@ h4 {
     background-color: #F9FFFC;
     border-color: #078758;
     font-weight: 600;
-    color: #078758;
+    color: #046d47;
 }
 
 .btn-outline-primary:hover {
@@ -265,6 +265,11 @@ input[type="email"]:focus,
     background-color: #FFF2F2;
 }
 
+.hero-img {
+    width: 100%;
+    height: 100%;
+}
+
 .hero-headline span {
     color: #046d47;
 }
@@ -314,13 +319,13 @@ input[type="email"]:focus,
 }
 
 .card-img-top {
-    height: 200px;
+    height: 240px;
     object-fit: cover;
 }
 
 .post-profile-image {
-    height: 28px;
-    width: 28px;
+    height: 26px;
+    width: 26px;
     border-radius: 28px;
     border: 1px solid #046d47;
     margin-right: 4px;
@@ -440,7 +445,9 @@ input[type="email"]:focus,
 /* 404 */
 
 .error-bg {
-    background: url('/static/images/404-bg.jpg') no-repeat center center;
+    background: url('/static/images/error-bg-image.jpg') no-repeat center center;
+    width: 100%;
+    height: 100%;
     margin-top: -160px;
     margin-bottom: -100px;
 }
