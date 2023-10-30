@@ -28,3 +28,11 @@ Before starting with the development it was crucial to first sketch out the func
 ![An image of a wireframe](static/images/readme/image-wireframes.jpg)
 
 [Link to all wireframes](https://github.com/dev-timm/DietaryYou/tree/main/static/images/readme/wireframes)
+
+### Usability
+
+#### Layout
+The interface is overall very minimalistic so that the user can focus completely on the core functionality. 
+
+#### Colors
+The colors are designed to highlight important actions such as links and submit buttons. Green was chosen as the primary color as it is a symbol for “fresh” and “healthy” and, therefore, a perfect fit to the product.
