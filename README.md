@@ -148,3 +148,90 @@ Users can also see all the posts they have saved as drafts as well as already pu
 If the user reaches a non-existing page, a custom 404 page is displayed.
 
 ![An image of the 404 page](static/images/readme/image-404.jpg)
+
+## Testing
+
+### Validation
+All webpages were tested with an [HTML Validator](https://validator.w3.org/), [CSS Validator](https://jigsaw.w3.org/css-validator/), [JS Validator](https://jshint.com/) and Code Institute’s own [Python Linter](https://pep8ci.herokuapp.com/) and no significant issues were found.
+
+### Lighthouse
+Each page of the deployed website has been tested multiple times with Google Chrome's Lighhouse feature to ensure all scores have been above 90 for both mobile and desktop devices.
+
+### Tested Devices & Browsers
+- iPhone 11
+    - Safari
+- Macbook Pro 2019 16-inch
+    - Chrome
+    - Safari
+    - Firefox
+
+### Feature Testing
+| Feature | Action | Expected Behaviour | Pass/Fail
+| --- | --- | --- | --- |
+| Sign Up | Don’t enter username | Shows error message that field must be filled | Pass
+| Sign Up | Enter new username | No error because username doesn’t exists yet | Pass
+| Sign Up | Enter already existing username | Shows error message that username already exists | Pass
+| Sign Up | Enter username with a space | Shows error message that username format has to be changed | Pass
+| Sign Up | Enter no email address | Signing up works since email is optional | Pass
+| Sign Up | Enter correct email address | Signing up works without error | Pass
+| Sign Up | Enter email address that doesn’t follow common conventions | Shows error message that email format must follow conventions | Pass
+| Sign Up | Enter and repeat acceptable password  | Signing up works without error | Pass
+| Sign Up | Repeat wrong password  | Shows error message that passwords need to match | Pass
+| Sign Up | Don’t enter password | Shows error message that field must be filled | Pass
+| Sign Up | Enter too short password | Shows error message that password must at least be 8 characters | Pass
+| Sign Up | Fill out all fields correctly and submit | Creates new account and user is signed in automatically | Pass
+| Sign Up | Click sign in link below button | Leads user to sign in page | Pass
+| Sign In | Click on the sign in button on the header | Opens sign in page | Pass
+| Sign In | Enter no username or password | Shows error message that fields must be filled | Pass
+| Sign In | Enter wrong username and/or password | Shows error message that either username or password are incorrect | Pass
+| Sign In | Enter correct username and password and click submit button | Successfully logs user in | Pass
+| Sign In | Click sign up link below button | Leads user to sign up page | Pass
+| Homepage | Click on the Join Now button in hero section without being logged in | Leads to sign up page | Pass
+| Homepage | Click on the Join Now button in hero section while being logged in | Refreshes page | Pass
+| Homepage | Click on the button in popular or recent post section without being logged in | Leads to sign up page | Pass
+| Homepage | Click on the button in popular or recent post section while being logged in | Refreshes page | Pass
+| Homepage | Click an author’s name on one of the posts | Leads to the author’s public profile | Pass
+| Homepage | Click on a post title | Leads to post detail page | Pass
+| Blog | Click on a post title | Leads to post detail page | Pass
+| Blog | Click the authors name on one of the posts | Leads to the authors user profile | Pass
+| Post Detail | Click on like icon without being logged in | No changes made | Pass
+| Post Detail | Click on like icon while being logged in | Icon changes color and counter increases/decreases by one | Pass
+| Post Detail | Click on comment icon | Page scrolls down to the comment section | Pass
+| Post Detail | Post a comment without entering content while being logged in | Shows error message that field must be filled | Pass
+| Post Detail | Post a comment with entered content while being logged in | Show alert that comment is awaiting approval | Pass
+| Create/Edit Post | Submit the post without filling in required fields | Show error message on first required field to please fill in | Pass
+| Create/Edit Post | Submit the post with wrong format in at least one text fields | Shows error message that conventions must be followed | Pass
+| Create/Edit Post | Submit the post with a slug that already exists | Shows error message that slug already exists | Pass
+| Create/Edit Post | Submit the post with required fields Title, Slug and content filled in | Submits post successfully | Pass
+| Create/Edit Post | Submit the post without choosing an image | Placeholder image will be added instead | Pass
+| Create/Edit Post | Choose status “Draft” | Post is not published but saved under the account page | Pass
+| Create/Edit Post | Choose status “Published” | Post is published | Pass
+| Create/Edit Post | Click on edit icon on the post detail page | Opens edit page for this post | Pass
+| Delete Post | Click on delete icon on the post detail page | Opens a warning page before user can delete the post | Pass
+| Delete Post | Click on delete button on warning page | Deletes post | Pass
+| Account | Click on profile image in the header | Opens account settings page | Pass
+| Account | Click on edit icon on account settings page | Opens email settings | Pass
+| Account | Click add email button without adding an email | Shows error message on first required field to please fill in | Pass
+| Account | Add new email with incorrect format | Shows error message that email format must follow conventions | Pass
+| Account | Add new email with correct format | Adds email with unverified status and shows info alert | Pass
+| Account | Add second unverified email and set to primary | Shows error message that email needs to be verified | Pass
+| Account | Add second verified email and set to primary | Changes primary email and shows success message | Pass
+| Account | Delete primary email | Shows error message that primary email cannot be removed | Pass
+| Account | Delete non-primary email | Removes email address and shows success message | Pass
+| Account | Click change password button | Opens change password page | Pass
+| Account | Submit the form without filling in required fields | Shows error message on first required field to please fill in | Pass
+| Account | Enter wrong current password | Shows error message to please fill in current password | Pass
+| Account | Enter and repeat new acceptable password  | Changing password works without error | Pass
+| Account | Repeat wrong new password  | Shows error message that passwords need to match | Pass
+| Account | Enter too short password | Shows error message that password must be at least 8 characters | Pass
+| Account | Enter all passwords correctly | Shows success message that password is changed | Pass
+| Account | Click on log out link | Opens a warning page before user can log out | Pass
+| Account | Click on log out button on warning page | Logs out user and shows success message | Pass
+| Profile | Click on edit icon next to the profile image | Opens edit profile page | Pass
+| Profile | Save the profile without filling in required fields | Shows error message on first required field to please fill in | Pass
+| Profile | Submit the profile with required fields | Submits profile successfully | Pass
+| Profile | Submit the profile without choosing an image | Placeholder image is still displayed | Pass
+| Profile | Choose a profile image and save the profile | New profile image is displayed | Pass
+| Header | Click on logo or Home | User is sent to homepage | Pass
+| Header | Click on Blog | User is sent to blog page with all posts | Pass
+| Footer | Click on social media icons | User is sent to corresponding social media account | Pass
