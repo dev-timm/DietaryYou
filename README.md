@@ -236,6 +236,33 @@ Each page of the deployed website has been tested multiple times with Google Chr
 | Header | Click on Blog | User is sent to blog page with all posts | Pass
 | Footer | Click on social media icons | User is sent to corresponding social media account | Pass
 
+## Technologies Used
+
+DietaryYou project mainly relies on:
+
+- [HTML](https://en.wikipedia.org/wiki/HTML)
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [Bootstrap](https://getbootstrap.com/)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Django](https://www.djangoproject.com/)
+- [Heroku](https://www.heroku.com/)
+- [SQLite](https://www.sqlite.org/index.html)
+- [ElephantSQL](https://www.elephantsql.com/)
+- [Git](https://git-scm.com/)
+
+Additionally, the following platforms and tools were used while working on the project:
+
+- [Gitpod](https://gitpod.io/)
+- [GitHub](https://github.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [Figma](https://www.figma.com/)
+
+The media and content pieces were created with the help of:
+
+- [Unsplash](https://unsplash.com/)
+- [ChatGPT](https://chat.openai.com/)
+
 ## Deployment
 
 ### Deploying the program to Heroku
