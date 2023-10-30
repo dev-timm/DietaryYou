@@ -19,3 +19,12 @@ As a user I want to...
 The MVP is a simple blog that aims to build a community of users with dietary issues so that people can support each other with tips and recipes. Therefore, the MVP provides users with the ability to create, read, edit and delete posts (CRUD). Moreover, users have the possibility to like and comment on posts which should welcome a healthy conversation to further discuss the topics mentioned in the post.
 
 To create, edit and delete a post the user needs to register and be logged in. For the MVP they also have the ability to customize their public profiles by adding more information about themselves as well as adding a profile picture.
+
+## Design Decisions
+
+### Wireframes
+Before starting with the development it was crucial to first sketch out the functionality in the form of a low-fi wireframes. After those were done and the functionality was clear, they were turned into hi-fi prototypes.
+
+![An image of a wireframe](static/images/readme/image-wireframes.jpg)
+
+[Link to all wireframes](https://github.com/dev-timm/DietaryYou/tree/main/static/images/readme/wireframes)
