@@ -149,6 +149,17 @@ If the user reaches a non-existing page, a custom 404 page is displayed.
 
 ![An image of the 404 page](static/images/readme/image-404.jpg)
 
+
+## Database
+
+![An image of the data models](static/images/readme/image-models.jpg)
+
+The database consists of 4 key models. The User model is inherited from django AllAuth package which stores information connected to registration, authentication and account management functionalities.
+
+Additionally, the UserProfile model expands on the User model by storing other, more personal, information about the users who decide to update their public profiles.
+
+The Post model is used for creating blog posts, i.e. for content creation, while Comment model stores users' comments on the blog posts.
+
 ## Testing
 
 ### Validation
