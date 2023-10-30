@@ -26,7 +26,7 @@ class UserProfile(models.Model):
         self.slug = self.user.username
         super(UserProfile, self).save(*args, **kwargs)
 
-
+# solution created with the help from https://stackoverflow.com/questions/66745216/django-creating-model-instance-when-user-is-created
 @receiver(post_save, sender=User)
 def set_up_user_profile(sender, instance, created, **kwargs):
     if created:

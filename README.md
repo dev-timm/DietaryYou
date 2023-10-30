@@ -258,3 +258,30 @@ Each page of the deployed website has been tested multiple times with Google Chr
 5. Open your IDE.
 6. Type  ```git clone <copied URL>``` into the terminal.
 7. If everything's done right, you should now see a cloned repository in your IDE.
+
+## Credits
+
+### Images
+All images for the website are taken from [unsplash.com](https://unsplash.com/).
+
+### Code
+
+Solutions that helped me with:
+
+- [changing width of summernote editor](https://stackoverflow.com/questions/61657061/how-do-i-resize-the-width-of-summernote)
+
+- [positioning footer at the bottom](https://www.youtube.com/watch?v=J-r75L3Tflg&t=235s)
+
+- understanding class based views for [creating](https://www.youtube.com/watch?v=m3efqF9abyg), [editing](https://www.youtube.com/watch?v=J7xaESAddDQ&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=7), [deleting](https://www.youtube.com/watch?v=8NPOwmtupiI&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=8) and [validating the right user](https://www.youtube.com/watch?v=Y1Us5jVT07E&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=17) when working with blog posts
+
+- [styling form components in forms.py](https://www.youtube.com/watch?v=6-XXvUENY_8)
+
+- [styling AllAuth form components in forms.py](https://stackoverflow.com/questions/21368481/django-allauth-how-to-add-custom-css-class-to-fields)
+
+- [automatically setting the logged in user as author of new post](https://www.reddit.com/r/djangolearning/comments/l7nuah/how_to_automatically_add_the_logged_in_users/) 
+
+- [adding the success message to the delete view](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown)
+
+- [counting the number of comments](https://www.reddit.com/r/django/comments/ka6mou/comment/gf8vhih/)
+
+- [creating the user profile as soon as the user signs up](https://stackoverflow.com/questions/66745216/django-creating-model-instance-when-user-is-created)

@@ -152,15 +152,6 @@ h4 {
     border-color: #046d47;
   }
 
-textarea:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-.uneditable-input:focus {
-    border: 2px solid #078758;
-    outline: 0 none;
-}
-
 .excerpt-height {
     height: 122px;
 }
@@ -397,6 +388,8 @@ input[type="email"]:focus,
 .max-login-width {
     max-width: 500px;
 }
+
+/* LOGIN, SIGNUP AND LOGOUT */
 
 /* ACCOUNT */
 

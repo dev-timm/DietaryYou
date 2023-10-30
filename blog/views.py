@@ -14,7 +14,8 @@ class PostList(generic.ListView):
 
     model = Post
     template_name = 'blog.html'
-
+    
+    # solution created with the help from https://www.reddit.com/r/django/comments/ka6mou/comment/gf8vhih/
     def get_context_data(self, **kwargs):
         approved_comments = Count('comments', filter=Q(comments__approved=True))
         post_list = Post.objects.filter(status=1).annotate(approved_comments=approved_comments).order_by('-created_on')
@@ -34,6 +35,7 @@ class AddPost(generic.CreateView):
     form_class = PostForm
     template_name = 'add_post.html'
 
+    # solution created with the help from https://www.reddit.com/r/djangolearning/comments/l7nuah/how_to_automatically_add_the_logged_in_users/
     def form_valid(self, form):
         if form.is_valid():
             form.instance.author = self.request.user
@@ -69,6 +71,7 @@ class DeletePost(generic.DeleteView):
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
 
+    # solution created with the help from https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
     def delete(self, request, *args, **kwargs):
         messages.add_message(self.request, messages.SUCCESS, "Your post was deleted successfully.")
         return super(DeletePost, self).delete(request, *args, **kwargs)
