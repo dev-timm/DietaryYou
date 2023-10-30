@@ -442,9 +442,6 @@ h4 {
 /* 404 */
 
 .error-bg {
-    background: url('/static/images/error-bg-image.jpg') no-repeat center center;
-    width: 100%;
-    height: 100%;
     margin-top: -160px;
     margin-bottom: -100px;
 }
