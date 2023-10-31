@@ -149,6 +149,13 @@ If the user reaches a non-existing page, a custom 404 page is displayed.
 
 ![An image of the 404 page](static/images/readme/image-404.jpg)
 
+### Future Features
+
+- Like a post without the page having to reload
+- Adding filter and search functionality, so users can better find the posts they are interested in
+- Let users like comments and create additional threads
+- Give users the option to save posts for later reading
+- Follow authors
 
 ## Database
 
@@ -167,6 +174,13 @@ All webpages were tested with an [HTML Validator](https://validator.w3.org/), [C
 
 ### Lighthouse
 Each page of the deployed website has been tested multiple times with Google Chrome's Lighhouse feature to ensure all scores have been above 90 for both mobile and desktop devices.
+
+#### Mobile
+![An image of lighthouse results on mobile](static/images/readme/lighthouse-mobile.jpg)
+
+#### Desktop
+![An image of lighthouse results on desktop](static/images/readme/lighthouse-desktop.jpg)
+
 
 ### Tested Devices & Browsers
 - iPhone 11
