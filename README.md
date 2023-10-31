@@ -261,6 +261,7 @@ DietaryYou project mainly relies on:
 - [SQLite](https://www.sqlite.org/index.html)
 - [ElephantSQL](https://www.elephantsql.com/)
 - [Git](https://git-scm.com/)
+- [Autoprefixer CSS](https://autoprefixer.github.io/)
 
 Additionally, the following platforms and tools were used while working on the project:
 
