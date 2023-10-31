@@ -14,21 +14,19 @@ class PostList(generic.ListView):
 
     model = Post
     template_name = 'blog.html'
-    
-    # solution created with the help from https://www.reddit.com/r/django/comments/ka6mou/comment/gf8vhih/
-    def get_context_data(self, **kwargs):
-        approved_comments = Count('comments', filter=Q(comments__approved=True))
-        post_list = Post.objects.filter(status=1).annotate(approved_comments=approved_comments).order_by('-created_on')
 
-        context = {
-            'post_list': post_list
-        }
-        kwargs.update(context)
-        return super().get_context_data(**kwargs)
+    paginate_by = 6
+
+    def get_queryset(self):
+        approved_comments = Count('comments', filter=Q(comments__approved=True))
+        queryset = Post.objects.filter(status=1).annotate(approved_comments=approved_comments).order_by('-created_on')
+        return queryset
+
+    context_object_name = 'post_list'
 
 
 class AddPost(generic.CreateView):
-    
+
     """A view to create a new post with the author being the signed in user """
 
     model = Post
