@@ -261,7 +261,6 @@ DietaryYou project mainly relies on:
 - [SQLite](https://www.sqlite.org/index.html)
 - [ElephantSQL](https://www.elephantsql.com/)
 - [Git](https://git-scm.com/)
-- [Autoprefixer CSS](https://autoprefixer.github.io/)
 
 Additionally, the following platforms and tools were used while working on the project:
 
@@ -269,6 +268,7 @@ Additionally, the following platforms and tools were used while working on the p
 - [GitHub](https://github.com/)
 - [Google Fonts](https://fonts.google.com/)
 - [Figma](https://www.figma.com/)
+- [Autoprefixer CSS](https://autoprefixer.github.io/)
 
 The media and content pieces were created with the help of:
 
@@ -324,3 +324,7 @@ Solutions that helped me with:
 - [counting the number of comments](https://www.reddit.com/r/django/comments/ka6mou/comment/gf8vhih/)
 
 - [creating the user profile as soon as the user signs up](https://stackoverflow.com/questions/66745216/django-creating-model-instance-when-user-is-created)
+
+- [working with context data in Django's ListViews when using pagination feature](https://stackoverflow.com/questions/52605869/pagination-does-not-work-after-changing-queryset-in-get-context-data)
+
+- [saving a model field as a default value from another model](https://stackoverflow.com/questions/44421024/django-model-field-with-default-value-from-another-model)

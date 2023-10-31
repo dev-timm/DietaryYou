@@ -22,6 +22,7 @@ class UserProfile(models.Model):
     def get_absolute_url(self):
         return reverse('user_profile')
 
+    # solution created with the help from https://stackoverflow.com/questions/44421024/django-model-field-with-default-value-from-another-model
     def save(self, *args, **kwargs):
         self.slug = self.user.username
         super(UserProfile, self).save(*args, **kwargs)
