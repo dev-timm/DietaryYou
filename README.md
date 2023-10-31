@@ -342,3 +342,8 @@ Solutions that helped me with:
 - [working with context data in Django's ListViews when using pagination feature](https://stackoverflow.com/questions/52605869/pagination-does-not-work-after-changing-queryset-in-get-context-data)
 
 - [saving a model field as a default value from another model](https://stackoverflow.com/questions/44421024/django-model-field-with-default-value-from-another-model)
+
+## Thank You
+
+- to my mentor Dick for supporting me with his feedback throughout the entire project
+- to my wife Valentina for making sure I always get the time and anything else I need for working on this course and projects
